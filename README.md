@@ -1,1 +1,85 @@
-# Comfort-my-Maryy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A little hug for my Lil lovely Maryy</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    padding: 24px; font-family: "Trebuchet MS", sans-serif; color: #654b52;
+    background: linear-gradient(145deg, #fff1f3, #fff8e9);
+  }
+  .card {
+    width: min(100%, 420px); padding: 28px 24px; text-align: center;
+    background: #fffdfb; border: 2px solid #ffe1e5; border-radius: 30px;
+    box-shadow: 0 14px 35px #b9788730;
+  }
+  h1 { color: #bd7180; margin: 12px 0 8px; }
+  p { line-height: 1.65; }
+  .bear {
+    position: relative; width: 128px; height: 118px; margin: 18px auto 22px;
+    border-radius: 48% 48% 44% 44%; background: #c98d69;
+    box-shadow: inset -9px -7px #a96f55;
+    animation: bob 2s ease-in-out infinite;
+  }
+  .ear {
+    position: absolute; top: -13px; width: 45px; height: 45px;
+    border-radius: 50%; background: #c98d69; z-index: -1;
+  }
+  .ear:first-child { left: 0; } .ear:nth-child(2) { right: 0; }
+  .ear:after {
+    content: ""; position: absolute; inset: 10px; border-radius: 50%;
+    background: #efb4a7;
+  }
+  .face { position: absolute; top: 42px; left: 0; width: 100%; font-size: 22px; }
+  .muzzle {
+    position: absolute; width: 52px; height: 35px; left: 38px; top: 54px;
+    border-radius: 50%; background: #f4d2b8;
+  }
+  .muzzle:after { content: "•ᴥ•"; color: #694b43; font-size: 19px; }
+  .heart { position: absolute; right: -8px; bottom: 2px; font-size: 31px; }
+  button {
+    border: 0; border-radius: 22px; padding: 12px 18px; margin: 5px;
+    background: #e995a3; color: white; font-size: 15px; cursor: pointer;
+  }
+  button:hover { background: #cc7485; transform: translateY(-1px); }
+  #note { min-height: 66px; color: #795b61; }
+  .small { color: #a77d83; font-size: 13px; }
+  @keyframes bob { 50% { transform: translateY(-7px) rotate(2deg); } }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="bear" aria-label="A cute little bear">
+    <span class="ear"></span><span class="ear"></span>
+    <div class="face"></div><div class="muzzle"></div>
+    <span class="heart">💕</span>
+  </div>
+
+  <h1>A tiny hug for you, maa ounn somlanhh</h1>
+  <p id="note">I know my lovee u felt so heavy, sweetheart. You don’t have to love your haircut today—or pretend you’re okay. I’m here with you, just as you are. 🤍</p>
+
+  <button onclick="nextNote()">A little reminder</button>
+  <button onclick="hug()">Send me a hug</button>
+  <p class="small" id="extra">Made with all my love, from your Rahul 💌</p>
+</main>
+<script>
+const notes = [
+  "One haircut doesn’t change your beauty, your lovely heart, or how much I adore you.",
+  "You’re allowed to feel upset. I’ll listen, keep you company, or distract you with something silly—your choice.",
+  "No need to decide how you feel about it right away. I love you through every mood and every hairstyle."
+];
+let i = 0;
+function nextNote() {
+  document.getElementById("note").textContent = notes[i % notes.length];
+  i++;
+}
+function hug() {
+  document.getElementById("extra").textContent =
+    "Bear hug delivered! Imagine me holding you close until the hard feelings soften 🧸";
+}
+</script>
+</body>
+</html>
